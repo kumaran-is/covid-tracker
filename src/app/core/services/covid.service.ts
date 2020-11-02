@@ -14,7 +14,7 @@ export class CovidService {
   ) { }
 
   public getAllCountryCovidReports(): Observable<any> {
-    return this.http.get<Covid[]>(`https://corona.lmao.ninja/v2/countries"`)
+    return this.http.get<Covid[]>(`https://corona.lmao.ninja/v2/countries`)
     .pipe(
       tap((response: any) => {
         console.log(response);

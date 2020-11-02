@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Observable } from 'rxjs';
+import { Covid } from './../core/models/covid';
+import { CovidService } from './../core/services/covid.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-columnDefs = [
+public columnDefs = [
     { field: 'country' },
     { field: 'cases' },
     { field: 'todayCases'},
@@ -21,11 +23,12 @@ columnDefs = [
     { field: 'date'}
 ];
 
-rowData = [];
+public rowData$: Observable<Covid[]>;
 
-constructor() { }
+constructor(private covidService: CovidService) { }
 
-  ngOnInit(): void {
-  }
+ngOnInit(): void {
+  this.rowData$ = this.covidService.getAllCountryCovidReports();
+}
 
 }
