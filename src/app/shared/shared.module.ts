@@ -8,6 +8,6 @@ import { AgGridModule } from 'ag-grid-angular';
     CommonModule,
     AgGridModule.withComponents([])
   ],
-  exports: [CommonModule]
+  exports: [CommonModule, AgGridModule]
 })
 export class SharedModule { }

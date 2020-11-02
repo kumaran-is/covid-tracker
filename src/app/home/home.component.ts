@@ -7,7 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+columnDefs = [
+    { field: 'country' },
+    { field: 'cases' },
+    { field: 'todayCases'},
+    { field: 'deaths' },
+    { field: 'todayDeaths'},
+    { field: 'recovered' },
+    { field: 'todayRecovered'},
+    { field: 'active' },
+    { field: 'critical'},
+    { field: 'tests' },
+    { field: 'date'}
+];
+
+rowData = [];
+
+constructor() { }
 
   ngOnInit(): void {
   }
