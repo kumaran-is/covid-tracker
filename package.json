@@ -5,9 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "prod-build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "aws-deploy": "npm run prod-build && aws s3 sync dist/covid-tracker/ s3://kumaran.dev"
   },
   "private": true,
   "dependencies": {
