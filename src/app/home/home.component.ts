@@ -19,8 +19,7 @@ public columnDefs = [
     { field: 'todayRecovered', sortable: true, width: 120, resizable: true},
     { field: 'active', sortable: true, width: 120, resizable: true },
     { field: 'critical', sortable: true, width: 120, resizable: true},
-    { field: 'tests', headerName: 'Total Tests', width: 120, sortable: true, resizable: true },
-    { field: 'date', sortable: true, width: 120, resizable: true}
+    { field: 'tests', headerName: 'Total Tests', width: 120, sortable: true, resizable: true }
 ];
 
 public rowData$: Observable<Covid[]>;
