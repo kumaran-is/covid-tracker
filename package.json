@@ -9,7 +9,11 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "aws-deploy": "npm run prod-build && aws s3 sync dist/covid-tracker/ s3://kumaran.dev"
+    "aws-deploy": "npm run prod-build && aws s3 sync dist/covid-tracker/ s3://kumaran.dev --delete",
+    "aws-ls": "aws s3 ls s3://kumaran.dev/ --recursive --human-readable --summarize",
+    "aws-remove": "aws s3 rb s3://kumaran.dev --force",
+    "aws-cb": "aws s3 mb s3://kumaran.dev --region us-east-1",
+    "aws-website": "aws s3 website s3://kumaran.dev/ --index-document index.html --error-document index.html"
   },
   "private": true,
   "dependencies": {
