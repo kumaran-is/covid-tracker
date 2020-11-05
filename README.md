@@ -2,7 +2,7 @@
 
 Covid Tracker is a web application built using [Angular v10.2.0](https://github.com/angular) to track `COVID-19` cases around the world.
 
-This application consumes API `https://corona.lmao.ninja/v2/countries` from [covid-19 global stats](https://corona.lmao.ninja/) and hosted on AWS S3.
+This application consumes API <https://corona.lmao.ninja/v2/countries> from [covid-19 global stats](https://corona.lmao.ninja/) and hosted on AWS S3.
 
 There are 2 ways you can launch the application :
 
