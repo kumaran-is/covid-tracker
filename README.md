@@ -1,27 +1,109 @@
 # Covid Tracker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+Covid Tracker is a web application built using [Angular v10.2.0](https://github.com/angular) to track `COVID-19` cases around the world.
 
-## Development server
+This application consumes API `https://corona.lmao.ninja/v2/countries` from [covid-19 global stats](https://corona.lmao.ninja/) and hosted on AWS S3.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+**Table of contents:**
 
-## Code scaffolding
+1. [Prerequisites and Installation](#prerequisites-and-installation)
+2. [Dependencies and Libraries](#dependencies-and-libraries)
+3. [Quick Start](#quick-start)
+4. [Host the Application on AWS S3 using AWS CLI](#host-the-application-on-aws-s3-using-aws-cli)
+5. [Status and Issues](#status-and-issues)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Prerequisites and Installation
 
-## Build
+1. Create a free-tier account in [AWS](www.aws.amazon.com).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+2. Create an `IAM` user  with [AdministratorAccess](https://console.aws.amazon.com/iam/home?region=us-east-1#/policies/arn:aws:iam::aws:policy/AdministratorAccess$jsonEditor) policy and [AmazonS3FullAccess](https://console.aws.amazon.com/iam/home?region=us-east-1#/policies/arn:aws:iam::aws:policy/AmazonS3FullAccess$jsonEditor) policy. It is highly recommended not to use `Root` account.
 
-## Running unit tests
+3. Install Python v3.9.x
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   ![Installation Instruction](./docs/1.png)
 
-## Running end-to-end tests
+4. Install AWS CLI v2
+   ![Installation Instruction](./docs/2.png)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+5. Configure AWS CLI. To configure the AWS CLI you’ll need the following from your AWS account :
 
-## Further help
+   1. Access Key Id
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   2. Secret Key
+   3. Default AWS region
+   
+
+![Installation Instruction](./docs/3.png)
+
+## Dependencies and Libraries
+
+Library | Version | Notes
+:-------|:--------:|-------
+[Node](https://nodejs.org/) | 12.13.x | Recommended NodeJS version
+[NPM](https://nodejs.org/) | 6.12.x | Recommended NPM version
+[Angular](https://angularjs.org/) | 10.x.x. | JavaScript-based open-source front-end SPA framework
+[Python](https://www.python.org/)| ~3.9.x | programming language
+[awscli](https://aws.amazon.com/cli/)| ~2.x.x | AWS Command Line Interface
+
+
+## Quick Start
+
+1. Clone repository and enter it
+
+  ```bash
+  git clone https://github.com/kumaran-is/covid-tracker.git
+  cd covid-tracker
+  ```
+
+2. Install NPM and Bower dependencies
+
+  ```bash
+  npm install
+  ```
+
+3. Run the application locally. Navigate to <http://localhost:4200/>. The app will automatically reload if you change any of the source files.
+
+  ```bash
+ ng serve --o
+  ```
+
+## Host the Application on AWS S3 using AWS CLI
+
+1. Run below command to create a bucket in S3. This command creates a bucket in  `us-east-1` AWS region. 👉 Make sure to replace `bucket_name` with your own bucket name and `region` with the region that you want to create the bucket in the package.json scripts.
+👉 Note: Bucket name must be unique across all existing bucket names in Amazon S3. The bucket name should be same as domain or subdomain. Example something like `covid.com` or `dev.covid.com`.
+
+  ```bash
+  npm run aws-cb
+  ```
+
+2. Run below command to enable S3 for static web hosting. 👉 Make sure to replace `bucket_name` with your own bucket name
+
+  ```bash
+  npm run aws-website
+  ```
+
+3. To make your hosted Angular app available to the public, all objects in the S3 bucket need to be publicly accessible. Go to your bucket in AWS console and create a bucket policy for you S3 bucket as mentioned below. 👉 Make sure to replace `bucket_name` with your own bucket name
+
+  ```JSON
+ {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::bucketname.com/*"
+        }
+    ]
+}
+  ```
+
+![Bucket Policy for S3](./docs/4.png)
+
+4. Now launch the application from AWS s3 by navigating to <http://<YOUR BUCKET NAME>.s3-website-<REGION NAME>.amazonaws.com>
+
+## Status and Issues
+
+* [Change History](./CHANGELOG.md).
+* [Issue tracker](https://github.com/kumaran-is/covid-tracker/issues?state=open)
