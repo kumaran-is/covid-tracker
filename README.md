@@ -174,7 +174,7 @@ or To avoid going to AWS console and creating the bucket policy manually, run th
 
 ## Configuring CloudFront
 
-1. 👉 Amazon S3 website endpoints do not support HTTPS. We need to setup `CloudFront` for website to support HTTPS. `CloudFront` is an AWS content delivery network (CDN)
+1. 👉 Amazon S3 website endpoints do not support HTTPS. We need to setup either `CloudFront` or `ELB` for website to support HTTPS. `CloudFront` is an AWS content delivery network (CDN)
 
 1. Go to AWS console and navigate to `CloudFront`, click `Create Distribution` and choose `Web` distribution and select “Get Started.”
 
