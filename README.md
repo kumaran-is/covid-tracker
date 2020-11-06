@@ -197,7 +197,7 @@ or To avoid going to AWS console and creating the bucket policy manually, run th
 
 1. Similarly create a record,  with record type `A` for host `yourdomain.com` using `simple routing` policy with `value/Route traffic` to  `Alias to CloudFront distribution` and choose corresponding CloudFront distribution name. It will take few minutes to issue certificate
 
-1. It will take few minutes for Route 53 to complete the process. Now launch the application by navigating to <www.yourdomain.com> or <https://www.yourdomain.com>
+1. It will take few minutes for Route 53 to complete the process. Now launch the application by navigating to www.yourdomain.com or <https://www.yourdomain.com>
 
 ## Terraform to Setup Infrastructure
 
