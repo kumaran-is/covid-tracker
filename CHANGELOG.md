@@ -1,3 +1,18 @@
+<a name="v2.0.0"></a>
+## 2.0.0 (2020-11-12)
+
+#### Bug Fixes
+
+* NA
+
+#### Features
+
+* Upgraded lint to [angular-eslint](https://github.com/angular-eslint/angular-eslint#migrating-from-codelyzer-and-tslint) [PR 2](https://github.com/kumaran-is/covid-tracker/pull/2).
+
+#### Breaking Changes
+
+* NA
+
 <a name="v1.0.0"></a>
 ## 1.0.0 (2020-11-12)
 
