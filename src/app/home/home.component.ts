@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { EMPTY, Observable } from 'rxjs';
 import { Covid } from './../core/models/covid';
 import { CovidService } from './../core/services/covid.service';
 @Component({
@@ -24,7 +24,9 @@ public columnDefs = [
 
 public rowData$: Observable<Covid[]>;
 
-constructor(private covidService: CovidService) { }
+constructor(private covidService: CovidService) {
+  this.rowData$ = EMPTY;
+}
 
 ngOnInit(): void {
   this.rowData$ = this.covidService.getAllCountryCovidReports();

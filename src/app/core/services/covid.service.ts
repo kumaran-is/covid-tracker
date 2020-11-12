@@ -21,10 +21,10 @@ export class CovidService {
       }),
       map(response => {
         const covidList: Covid[] = [];
-        response.forEach(covidResp => {
+        response.forEach((covidResp: Covid) => {
           const covid: Covid = new Covid();
           covid.country =  covidResp.country;
-          covid.flag =  covidResp.countryInfo.flag;
+         // covid.flag =  covidResp.countryInfo.flag;
           covid.continent =  covidResp.continent;
           covid.cases =  covidResp.cases;
           covid.todayCases =  covidResp.todayCases;

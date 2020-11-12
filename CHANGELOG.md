@@ -1,3 +1,18 @@
+<a name="v1.0.0"></a>
+## 1.0.0 (2020-11-12)
+
+#### Bug Fixes
+
+* NA
+
+#### Features
+
+* Upgraded to Angular 11 [PR 1](https://github.com/kumaran-is/covid-tracker/pull/1).
+
+#### Breaking Changes
+
+* NA
+
 <a name="v0.0.1"></a>
 ## 0.0.1 (2020-11-04)
 
