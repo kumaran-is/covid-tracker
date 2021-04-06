@@ -34,7 +34,7 @@
     "ag-grid-angular": "~24.1.0",
     "ag-grid-community": "~24.1.0",
     "rxjs": "~6.6.0",
-    "tslib": "~2.0.0",
+    "tslib": "~2.2.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
