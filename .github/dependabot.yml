@@ -1,0 +1,59 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@angular/cli"
+    versions:
+    - 11.2.2
+    - 11.2.3
+    - 11.2.4
+    - 11.2.5
+    - 11.2.6
+    - 11.2.7
+    - 11.2.8
+    - 11.2.9
+  - dependency-name: "@angular-eslint/schematics"
+    versions:
+    - 1.2.0
+    - 2.0.1
+    - 2.0.2
+    - 2.1.0
+  - dependency-name: "@angular-eslint/template-parser"
+    versions:
+    - 1.2.0
+    - 2.0.1
+    - 2.0.2
+    - 2.1.0
+  - dependency-name: "@typescript-eslint/parser"
+    versions:
+    - 4.16.1
+    - 4.17.0
+    - 4.18.0
+    - 4.19.0
+    - 4.20.0
+    - 4.21.0
+  - dependency-name: "@types/jasmine"
+    versions:
+    - 3.6.4
+    - 3.6.6
+    - 3.6.7
+    - 3.6.8
+    - 3.6.9
+  - dependency-name: karma
+    versions:
+    - 6.1.1
+    - 6.1.2
+    - 6.2.0
+    - 6.3.0
+    - 6.3.1
+  - dependency-name: "@angular/animations"
+    versions:
+    - 11.2.3
+    - 11.2.4
+  - dependency-name: tslib
+    versions:
+    - 2.1.0
